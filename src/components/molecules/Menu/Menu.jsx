@@ -3,6 +3,7 @@ import { MenuBar } from "../../atoms/MenuBar/MenuBar"
 import { useState} from "react"
 import { AiOutlineMenu } from "react-icons/ai"
 import { Typography } from "@mui/material"
+import {Backdrop} from "@mui/material";
 
 export const Menu = ({menus}) => {
     const generateMenu = () => {
@@ -21,7 +22,8 @@ export const Menu = ({menus}) => {
         <MenuBar isOpen={openMenu}>
             {openMenu ? (<><p onClick={handleOpenMenu} className="menuBurger"><AiOutlineMenu/></p>{
                 generateMenu()
-            }</>) : (<p onClick={handleOpenMenu} className="menuBurger"><AiOutlineMenu/></p>)}
+                
+            }<Backdrop open={true} invisible={true}/></>) : (<p onClick={handleOpenMenu} className="menuBurger"><AiOutlineMenu/></p>)}
             
         </MenuBar>
     )
