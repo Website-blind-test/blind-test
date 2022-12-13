@@ -5,8 +5,7 @@
     z-index: 5;
     top: 0;
     position: fixed;
-    height: 99%;
-
+    height: 100%;
 }
 
 .navbarOpen {
@@ -15,7 +14,7 @@
     border-radius: 10px;
     animation-duration: 0.2s;
     animation-name: slidein;
-    /* box-shadow: 2px 0px; */
+    box-shadow: 1px 0px;
 }
   
   @keyframes slidein {
@@ -29,11 +28,11 @@
       width: 40%;
     }
   }
-  
 
 .menuBurger {
     display: flex;
     justify-content: flex-start;
     color: #00FFD1;
+    margin-left: 5px;
     z-index: 10;
 }

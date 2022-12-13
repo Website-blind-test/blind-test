@@ -1,11 +1,11 @@
 import React from "react";
 import { LoginForm } from "../../molecules/LoginForm/LoginForm";
-import { Navbar } from "../Navbar/Navbar";
+import { TopRibbon } from "../TopRibbon/TopRibbon";
 
 export const Login = () => {
     return (
         <div>
-            <Navbar />
+            <TopRibbon>LoginPage</TopRibbon>
             <LoginForm />
         </div>
     )

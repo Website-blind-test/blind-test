@@ -13,7 +13,7 @@ export const Navbar = (props) => {
     const [content, setContent] = useState(false);
     const [openMenu, setOpenMenu] = useState(false)
     return(
-        <>
+        <div className="navbarStyle">
             <Menu 
             openMenu={openMenu}
             setOpenMenu={() => {setOpenMenu(!openMenu); console.log("bite")}}
@@ -32,6 +32,6 @@ export const Navbar = (props) => {
                 
             ]}></Menu>
 
-        </>
+        </div>
     )
 }
