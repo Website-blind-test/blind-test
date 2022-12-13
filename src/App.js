@@ -5,8 +5,12 @@ import { ThemeProvider } from 'styled-components';
 import {getTheme} from './themes/default.js'
 import { LoginPage } from './components/pages/LoginPage/LoginPage';
 function App() {
+
+  const darkmode = false;
   return (
-    <LoginPage />
+    <ThemeProvider theme={getTheme(darkmode)}>
+      <LoginPage />
+    </ThemeProvider>
   );
 }
 
