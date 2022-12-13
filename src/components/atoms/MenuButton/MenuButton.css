@@ -4,7 +4,7 @@
     z-index: 6;
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     border-top: none;
     padding-bottom: 10px;
     border-bottom: solid;
@@ -13,8 +13,13 @@
     border-width: 1px;
 }
 
+.buttonTitle {
+    margin-left: 10%
+}
+
 .menuButton:hover {
     cursor: pointer;
+    opacity:0.5;
 }
 
 /* .navbarDivider { color: red} */
