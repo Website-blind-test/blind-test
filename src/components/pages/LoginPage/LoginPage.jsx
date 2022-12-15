@@ -1,10 +1,10 @@
 import React from "react"; 
-import { Login } from "../../organisms/LoginOrga/Login";
+import { LoginTemplate } from "../../templates/LoginTemplate/LoginTemplate";
 
 
 export const LoginPage = () => {
     return  (
-        <Login />
+        <LoginTemplate />
     )
 
 }
