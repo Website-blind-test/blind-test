@@ -3,7 +3,10 @@ import { MenuBar } from "../../atoms/MenuBar/MenuBar"
 import { useState} from "react"
 import { AiOutlineMenu } from "react-icons/ai"
 import { Typography } from "@mui/material"
+<<<<<<< HEAD
 import {Backdrop} from "@mui/material";
+=======
+>>>>>>> 665222e (Add navbar)
 
 export const Menu = ({menus}) => {
     const generateMenu = () => {

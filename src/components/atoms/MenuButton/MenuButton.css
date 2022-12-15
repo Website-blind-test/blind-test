@@ -1,7 +1,7 @@
 .menuButton {
     background-color: transparent;
     color: #FFFF;
-    z-index: 6;
+    z-index: 1000;
     margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
