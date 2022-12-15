@@ -7,6 +7,7 @@ import { LoginPage } from './components/pages/LoginPage/LoginPage';
 import { SignupPage } from './components/pages/SignupPage/SignupPage';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
+import { HomePage } from './components/pages/HomePage/HomePage';
 function App() {
 
   return (
