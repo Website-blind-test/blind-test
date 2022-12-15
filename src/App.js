@@ -13,9 +13,7 @@ import { ProfilPage } from './components/pages/ProfilPage/ProfilPage';
 function App() {
 
   return (
-    
-    <ProfilPage />
-    //<RouteHub />
+    <RouteHub />
   );
 }
 
