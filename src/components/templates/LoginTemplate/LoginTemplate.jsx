@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import React from "react";
-import { LoginForm } from "../../organisms/LoginForm/LoginForm";
+import { LoginForm } from "../../organisms/LoginOrga/LoginOrga";
 import './LoginTemplate.css'
 
 export const LoginTemplate = () => {

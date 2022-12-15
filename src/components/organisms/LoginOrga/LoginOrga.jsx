@@ -1,6 +1,6 @@
 import { Button, TextField, Typography } from "@mui/material"
 import { LabeledField } from "../../molecules/LabeledField/LabeledField"
-import './LoginForm.css'
+import './LoginOrga.css'
 
 export const LoginForm = () => {
     return (

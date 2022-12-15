@@ -7,7 +7,6 @@ import { LoginPage } from './components/pages/LoginPage/LoginPage';
 import { SignupPage } from './components/pages/SignupPage/SignupPage';
 import { useState } from 'react';
 function App() {
-
   const [theme, setTheme] = useState(true);
   return (
     <ThemeProvider theme={getTheme(theme)}>
