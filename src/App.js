@@ -13,9 +13,15 @@ import { ProfilPage } from './components/pages/ProfilPage/ProfilPage';
 function App() {
 
   return (
-    
-    <ProfilPage />
-    //<RouteHub />
+    <BrowserRouter>
+      <Routes>
+          <Route path="/">
+            <Route index element={<ThemeProvider theme={getTheme(false)}><LoginPage/></ThemeProvider>} />
+            <Route path="home" element={<HomePage/>} />
+            <Route path="sign-up"  element={<ThemeProvider theme={getTheme(true)}><SignupPage/></ThemeProvider>} />
+          </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

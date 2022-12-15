@@ -1,0 +1,24 @@
+.menuButton {
+    background-color: transparent;
+    color: #FFFF;
+    z-index: 6;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: left;
+    border-top: none;
+    padding-bottom: 10px;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+}
+
+.buttonTitle {
+    margin-left: 10%;
+    font-size: smaller;
+}
+
+.menuButton:hover {
+    cursor: pointer;
+    opacity:0.5;
+}
