@@ -8,6 +8,7 @@ export const LoginTemplate = () => {
         <div>
             <Typography variant="h5" align="center" color="white" sx={{marginTop: "1rem"}}>Connexion</Typography>
             <LoginOrga />
+            
         </div>
     )
 }
