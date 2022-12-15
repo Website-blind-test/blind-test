@@ -13,8 +13,8 @@ function App() {
     <BrowserRouter>
       <Routes>
           <Route path="/">
-            <Route index element={<ThemeProvider theme={getTheme(false)}><LoginPage/></ThemeProvider>} />
-            <Route path="sign-up"  element={<ThemeProvider theme={getTheme(true)}><SignupPage/></ThemeProvider>} />
+            <Route index element={<ThemeProvider theme={getTheme('login')}><LoginPage/></ThemeProvider>} />
+            <Route path="sign-up"  element={<ThemeProvider theme={getTheme('signup')}><SignupPage/></ThemeProvider>} />
           </Route>
       </Routes>
     </BrowserRouter>
