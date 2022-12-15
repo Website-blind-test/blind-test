@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    z-index: 5;
+    top: 0;
+    position: fixed;
+    height: 100%;
+}
+
+.navbarOpen {
+    background: linear-gradient(135deg, darkblue, blue);
+    border: solid;
+    border-radius: 10px;
+    animation-duration: 0.2s;
+    animation-name: slidein;
+    box-shadow: 1px 0px;
+}
+  
+  @keyframes slidein {
+    from {
+      margin-left: 0%;
+      width: 0%;
+    }
+  
+    to {
+      margin-left: 00%;
+      width: 40%;
+    }
+  }
+
+.menuBurger {
+    display: flex;
+    justify-content: flex-start;
+    color: #00FFD1;
+    margin-left: 5px;
+    z-index: 10;
+}
