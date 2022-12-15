@@ -15,6 +15,7 @@ function App() {
       <Routes>
           <Route path="/">
             <Route index element={<ThemeProvider theme={getTheme(false)}><LoginPage/></ThemeProvider>} />
+            <Route path="home" element={<HomePage/>} />
             <Route path="sign-up"  element={<ThemeProvider theme={getTheme(true)}><SignupPage/></ThemeProvider>} />
           </Route>
       </Routes>
