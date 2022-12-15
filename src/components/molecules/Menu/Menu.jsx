@@ -1,4 +1,4 @@
-import { MenuButton } from "../../atoms/MenuButton/MenuButton"
+import { Button } from "../../atoms/MenuButton/Button"
 import { MenuBar } from "../../atoms/MenuBar/MenuBar"
 import { useState} from "react"
 import { AiOutlineMenu } from "react-icons/ai"
@@ -8,7 +8,7 @@ import {Backdrop} from "@mui/material";
 export const Menu = ({menus}) => {
     const generateMenu = () => {
         return menus.map((menu, i) => {
-            return <MenuButton key={i}>{menu.icon}<div className="buttonTitle">{menu.title}</div></MenuButton>
+            return <Button key={i} class="menuButton">{menu.icon}<div className="buttonTitle">{menu.title}</div></Button>
         })
     }
 

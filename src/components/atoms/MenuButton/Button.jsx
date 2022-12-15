@@ -1,5 +1,5 @@
-import "./MenuButton.css"
-export const MenuButton = (props) =>  {
+import "./Button.css"
+export const Button = (props) =>  {
     
     const contentHandler = () => {
         return props.action(props.content)
@@ -7,7 +7,7 @@ export const MenuButton = (props) =>  {
     
     return (
         <>
-            <button className="menuButton" onClick={contentHandler}>{props.children}</button>
+            <button className={props.class} onClick={contentHandler}>{props.children}</button>
             {/* <Divider light={true} sx={{paddingBottom: "10px", borderRadius: "10px", color:"white", zIndex:1000}}></Divider> */}
         </>
 

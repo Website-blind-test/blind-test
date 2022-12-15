@@ -22,4 +22,23 @@
     opacity:0.5;
 }
 
-/* .navbarDivider { color: red} */
+.homeButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 40px;
+    background-color: #082C6C;
+    border: solid 1px;
+    border-color: #082C6C;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+}
+
+.homeButton > * {
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+}
