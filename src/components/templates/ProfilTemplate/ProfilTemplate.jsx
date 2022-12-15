@@ -6,6 +6,7 @@ export const ProfilTemplate = () => {
     return (
         <>
             <TopRibbon>Profil</TopRibbon>
+            <Navbar />
             <ProfilOrga />
         </>
     )
