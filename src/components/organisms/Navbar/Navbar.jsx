@@ -21,14 +21,10 @@ export const Navbar = (props) => {
                     setContent(!content)
                 }} 
             menus={[
-                {title:"Accueil", icon :(<AiOutlineHome size='1.5em'/>)},
-                {title:"Profil", icon :(<CgProfile size='1.5em'/>)},
-                // {title:"Créer une partie", icon :(<IoAddOutline size='1.5em'/>)},
-                // {title: "Rejoindre une partie", icon :(<FiPlay size='1.5em'/>)},
-                // {title: "Ajouter une musique", icon :(<MdOutlinePlaylistAdd size='1.5em'/>)},
+                {title:"Accueil", icon :(<AiOutlineHome size='1.5em'/>), url: "home"},
+                {title:"Profil", icon :(<CgProfile size='1.5em'/>), url: "profil"},
                 {title: "Classement", icon :(<TbLadder size='1.5em'/>)},
-                {title: "Déconnexion", icon :(<FiLogOut size='1.5em' transform="rotate(180)" />)},
-                // {title: "Supprimer une musique", icon :(<AiOutlineDelete size='1.5em'/>)}
+                {title: "Déconnexion", icon :(<FiLogOut size='1.5em' transform="rotate(180)" />), url:"/"},
                 
             ]}></Menu>
 
