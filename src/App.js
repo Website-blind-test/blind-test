@@ -8,6 +8,8 @@ import { SignupPage } from './components/pages/SignupPage/SignupPage';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 import { HomePage } from './components/pages/HomePage/HomePage';
+import { RouteHub } from './components/Routes/RouteHub';
+import { ProfilPage } from './components/pages/ProfilPage/ProfilPage';
 function App() {
 
   return (
