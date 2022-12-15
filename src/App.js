@@ -5,14 +5,19 @@ import { ThemeProvider } from 'styled-components';
 import {getTheme} from './themes/default.js'
 import { LoginPage } from './components/pages/LoginPage/LoginPage';
 import { SignupPage } from './components/pages/SignupPage/SignupPage';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 function App() {
 
-  const [theme, setTheme] = useState(true);
   return (
-    <ThemeProvider theme={getTheme(theme)}>
-      <SignupPage changePageTheme={setTheme}/>
-    </ThemeProvider>
+    <BrowserRouter>
+      <Routes>
+          <Route path="/">
+            <Route index element={<ThemeProvider theme={getTheme(false)}><LoginPage/></ThemeProvider>} />
+            <Route path="sign-up"  element={<ThemeProvider theme={getTheme(true)}><SignupPage/></ThemeProvider>} />
+          </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
