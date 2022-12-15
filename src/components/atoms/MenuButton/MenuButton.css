@@ -1,0 +1,20 @@
+.menuButton {
+    background-color: transparent;
+    color: #FFFF;
+    z-index: 1000;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-top: none;
+    padding-bottom: 10px;
+    border-bottom: solid;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+}
+
+.menuButton:hover {
+    cursor: pointer;
+}
+
+/* .navbarDivider { color: red} */
