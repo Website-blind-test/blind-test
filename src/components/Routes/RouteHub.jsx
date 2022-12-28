@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from 'react';
 import { HomePage } from '../pages/HomePage/HomePage.jsx';
 import { ProfilPage } from '../pages/ProfilPage/ProfilPage.jsx';
+import { AddMusicPage } from '../pages/AddMusicPage/AddMusicPage.jsx';
 
 export const RouteHub = () => {
     return (
@@ -17,6 +18,7 @@ export const RouteHub = () => {
               <Route path="sign-up"  element={<ThemeProvider theme={getTheme('signup')}><SignupPage/></ThemeProvider>} />
               <Route path="home" element={<HomePage />} />
               <Route path="profil" element={<ProfilPage />} />
+              <Route path="add-music" element={<AddMusicPage />} />
             </Route>
         </Routes>
       </BrowserRouter>
