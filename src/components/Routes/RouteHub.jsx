@@ -6,8 +6,6 @@ import { SignupPage } from '../pages/SignupPage/SignupPage';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from '../pages/HomePage/HomePage.jsx';
 import { ProfilPage } from '../pages/ProfilPage/ProfilPage.jsx';
-import { Provider } from 'react-redux';
-import store from '../../store/store';
 
 export const RouteHub = () => {
     return (
