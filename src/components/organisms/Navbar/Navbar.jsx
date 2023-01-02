@@ -16,15 +16,15 @@ export const Navbar = (props) => {
         <div className="navbarStyle">
             <Menu 
             openMenu={openMenu}
-            setOpenMenu={() => {setOpenMenu(!openMenu); console.log("bite")}}
+            setOpenMenu={() => {setOpenMenu(!openMenu)}}
             changeContent={() => {
                     setContent(!content)
                 }} 
             menus={[
-                {title:"Accueil", icon :(<AiOutlineHome size='1.5em'/>), url: "home"},
-                {title:"Profil", icon :(<CgProfile size='1.5em'/>), url: "profil"},
-                {title: "Classement", icon :(<TbLadder size='1.5em'/>)},
-                {title: "Déconnexion", icon :(<FiLogOut size='1.5em' transform="rotate(180)" />), url:"/"},
+                {title:"Accueil", icon :(<AiOutlineHome size='1.5em'/>), url: "home", divider: true},
+                {title:"Profil", icon :(<CgProfile size='1.5em'/>), url: "profil", divider: true},
+                {title: "Classement", icon :(<TbLadder size='1.5em'/>), divider: true},
+                {title: "Déconnexion", icon :(<FiLogOut size='1.5em' transform="rotate(180)" />), url:"/", divider: false},
                 
             ]}></Menu>
 

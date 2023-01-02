@@ -9,7 +9,7 @@ export const LabeledField = ({label, ...props}) => {
     return (
         <StyledLabeledField >
             <Typography {...label} gutterBottom align="left" ></Typography>
-            <TextField {...props}></TextField>
+            <TextField {...props} sx={{borderRadius: 2, bgcolor: 'background.paper', position: 'relative', bottom: '0.5rem'}} ></TextField>
         </StyledLabeledField>
     )
 

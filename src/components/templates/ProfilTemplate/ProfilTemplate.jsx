@@ -2,11 +2,11 @@ import { Navbar } from "../../organisms/Navbar/Navbar"
 import { ProfilOrga } from "../../organisms/ProfilOrga/ProfilOrga"
 import { TopRibbon } from "../../organisms/TopRibbon/TopRibbon"
 
-export const ProfilTemplate = () => {
+export const ProfilTemplate = (props) => {
     return (
         <>
             <TopRibbon>Profil</TopRibbon>
-            <ProfilOrga />
+            <ProfilOrga idUser={props.idUser}/>
         </>
     )
 }
