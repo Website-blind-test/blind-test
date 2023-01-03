@@ -4,6 +4,7 @@ import { setMessage } from "./message";
 import AuthService from "../services/auth.service";
 
 const user = JSON.parse(localStorage.getItem("user"));
+const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 
 export const register = createAsyncThunk(
   "auth/register",
@@ -50,7 +51,7 @@ export const logout = createAsyncThunk("auth/logout", async () => {
 });
 
 const initialState = user
-  ? { isLoggedIn: true, user }
+  ? { isLoggedIn: true, user, userInfo }
   : { isLoggedIn: false, user: null };
 
 const authSlice = createSlice({
@@ -66,14 +67,17 @@ const authSlice = createSlice({
     [login.fulfilled]: (state, action) => {
       state.isLoggedIn = true;
       state.user = action.payload.user;
+      state.userInfo = action.payload.userInfo
     },
     [login.rejected]: (state, action) => {
       state.isLoggedIn = false;
       state.user = null;
+      state.userInfo = null
     },
     [logout.fulfilled]: (state, action) => {
       state.isLoggedIn = false;
       state.user = null;
+      state.userInfo = null
     },
   },
 });

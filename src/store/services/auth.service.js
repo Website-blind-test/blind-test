@@ -3,7 +3,6 @@ import axios from "axios";
 const API_URL = "http://localhost:8055/"
 
 const login = (email, password) =>{
-    console.log(localStorage.getItem('user'));
     return axios.post(API_URL+"auth/login", {
         email,
         password,
@@ -11,6 +10,18 @@ const login = (email, password) =>{
     .then((response) => {
         if(response.data.data.access_token){
             localStorage.setItem("user", JSON.stringify(response.data.data));
+            const usersReq = axios.get(API_URL + "users").then((responseGet) => {
+              let users = responseGet.data.data
+              let obj = JSON.parse(response.config.data)
+              users.forEach(user => {
+                if(user.email == obj.email){
+                  let idUser = user.id;
+                  let username = user.first_name;
+                  let email = user.email
+                  localStorage.setItem("userInfo", JSON.stringify({userId: idUser, username: username, email: email}) );
+                }
+              });
+            });
         }
 
         return response.data
@@ -53,6 +64,7 @@ const register = (first_name, email, password) => {
 
   const logout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("userId")
   };
   
   const authService = {

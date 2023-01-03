@@ -62,16 +62,17 @@ export const SignupOrga = () => {
         dispatch(register({ first_name, email, password }))
           .unwrap()
           .then(() => {
-            
+            navigate("/");
+            window.location.reload();
           })
           .catch(() => {
             setSuccessful(false);
           });
       };
 
-    // if(successful){
-    //   return <Navigate to="/" />;
-    // }
+    if(successful){
+      return <Navigate to="/" />;
+    }
 
     return (
         <>
