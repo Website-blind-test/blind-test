@@ -4,15 +4,16 @@ import PlaylistService from "../services/playlist.service";
 import { create } from "yup/lib/Reference";
 import { action } from "@storybook/addon-actions";
 
+
+
 export const getPlaylists = createAsyncThunk(
     "playlist/getPlaylists",
-    async (thunkAPI) => {
+    async (_, thunkAPI) => {
         try {
             const response = await PlaylistService.getPlaylists();
-            console.log(response);
+            console.log(response)
             return response.data; 
         } catch (error) {
-            console.log("lama");
             const message =
             (error.response &&
               error.response.data &&
@@ -32,8 +33,7 @@ const playlistSlice = createSlice({
     name: "playlist",
     initialState,
     reducers: {
-        getPlaylists: (state, action) => {
-            console.log(getPlaylists());
+        [getPlaylists.fulfilled]: (state, action) => {
             state.playlists = action.payload.playlists;
         },
     },   

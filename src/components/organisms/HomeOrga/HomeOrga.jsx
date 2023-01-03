@@ -11,7 +11,7 @@ export const HomeOrga = (props) => {
     return(
         <HomeListButton
         buttons={[
-            {text: "Créer une partie", icon:(<IoAddOutline size='1.5em'/>)},
+            {text: "Créer une partie", icon:(<IoAddOutline size='1.5em'/>), url:'/create-game'},
             {text: "Rejoindre une partie", icon :(<FiPlay size='1.5em'/>)},
             {text: "Ajouter une musique", icon :(<MdOutlinePlaylistAdd size='1.5em'/>), url:'/add-music'},
             {text: "Supprimer une musique", icon :(<AiOutlineDelete size='1.5em'/>)}

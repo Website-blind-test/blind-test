@@ -6,15 +6,15 @@ import { getPlaylists } from "../../../store/slices/playlist";
 
 export const AddThemeDialog = (props) => {
 
-    const playlists = useSelector((state) => state);
-    const dispatch = useDispatch();
-    dispatch(getPlaylists())
-    .unwrap()
-    .then(
-        () =>{
-            console.log('tarace')
-        }
-    )
+    // const playlists = useSelector((state) => state);
+    // const dispatch = useDispatch();
+    // dispatch(getPlaylists())
+    // .unwrap()
+    // .then(
+    //     () =>{
+    //         console.log('tarace')
+    //     }
+    // )
 
     return(
             <Dialog open={props.isOpen} sx={{height:"100%"}}>

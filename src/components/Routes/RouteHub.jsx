@@ -10,6 +10,7 @@ import store from '../../store/store';
 import { HomePage } from '../pages/HomePage/HomePage.jsx';
 import { ProfilPage } from '../pages/ProfilPage/ProfilPage.jsx';
 import { AddMusicPage } from '../pages/AddMusicPage/AddMusicPage.jsx';
+import { CreateGame, CreateGamePage } from '../pages/CreateGamePage/CreateGamePage.jsx';
 
 export const RouteHub = () => {
     return (
@@ -22,6 +23,7 @@ export const RouteHub = () => {
                 <Route path="home" element={<HomePage />} />
                 <Route path="profil" element={<ProfilPage />} />
                 <Route path="add-music" element={<AddMusicPage />} />
+                <Route path="create-game" element={<CreateGamePage/>}/>
               </Route>
           </Routes>
         </BrowserRouter>
