@@ -29,7 +29,8 @@ const login = (email, password) =>{
 }
 
 const register = (first_name, email, password) => {
-    const role = "3e5173cf-4003-49b5-9335-50b5bd2bad35"
+  const role = "ad0210e5-eb5e-4f54-8899-f16a17b9eb7b"
+    // const role = "3e5173cf-4003-49b5-9335-50b5bd2bad35"
     return axios.post(API_URL + "users", {
         first_name,
         email,
