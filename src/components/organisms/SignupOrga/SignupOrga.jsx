@@ -1,5 +1,5 @@
 import { FormField } from "../../molecules/FormField/FormField";
-import { Button, Link, Typography } from "@mui/material";
+import { Button, Link, Modal, Typography } from "@mui/material";
 import './SignupOrga.css'
 import { Formik, Form} from "formik";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ export const SignupOrga = () => {
     let navigate = useNavigate();
 
     const [successful, setSuccessful] = useState(false);
-
+    
     const dispatch = useDispatch();
   
     useEffect(() => {
@@ -62,17 +62,16 @@ export const SignupOrga = () => {
         dispatch(register({ first_name, email, password }))
           .unwrap()
           .then(() => {
-            navigate("/");
-            window.location.reload();
+            
           })
           .catch(() => {
             setSuccessful(false);
           });
       };
 
-      if(successful){
-        return <Navigate to="/" />;
-      }
+    // if(successful){
+    //   return <Navigate to="/" />;
+    // }
 
     return (
         <>
@@ -87,7 +86,6 @@ export const SignupOrga = () => {
             </Form>
         </div>
         </Formik>
-
         </>
         
     )

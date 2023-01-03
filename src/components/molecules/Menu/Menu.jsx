@@ -9,10 +9,9 @@ import {Backdrop} from "@mui/material";
 export const Menu = ({menus}) => {
     const generateMenu = () => {
         return menus.map((menu, i) => {
-            console.log(menu.divider)
             return (
             <>
-                <Button href={menu.url} key={i} className="menuButton" sx={{display:"flex", justifyContent:"left",marginBottom:"10px", marginTop: "10px", color:"#FFFF", borderRadius:"0px"}}>
+                <Button href={menu.url} onClick={() => {if(menu.action){menu.action.handleLogout()}}} key={i} className="menuButton" sx={{display:"flex", justifyContent:"left",marginBottom:"10px", marginTop: "10px", color:"#FFFF", borderRadius:"0px"}}>
                     {menu.icon}
                     <div className="buttonTitle">{menu.title}
                 </div></Button>

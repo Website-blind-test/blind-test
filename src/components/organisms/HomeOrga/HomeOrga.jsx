@@ -7,6 +7,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 
 
 export const HomeOrga = (props) => {
+
     return(
         <HomeListButton
         buttons={[

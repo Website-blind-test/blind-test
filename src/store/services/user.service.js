@@ -1,14 +1,14 @@
 import axios from "axios";
-import authHeader from "./auth-header";
+import authHeader from "./auth.header";
 
-const API_URL = "http://localhost:8080/";
+const API_URL = "http://localhost:8055/";
 
-const getDifficulty = () => {
-  return axios.get(API_URL + "difficulty", { headers: authHeader() });
+const getUserInfo = (id) => {
+  return axios.get(API_URL + "items/user/"+id, { headers: authHeader() });
 };
 
 const userService = {
-    getPublicContent   
+    getUserInfo,   
   };
   
   export default userService

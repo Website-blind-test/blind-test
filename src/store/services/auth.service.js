@@ -3,15 +3,17 @@ import axios from "axios";
 const API_URL = "http://localhost:8055/"
 
 const login = (email, password) =>{
+    console.log(localStorage.getItem('user'));
     return axios.post(API_URL+"auth/login", {
         email,
         password,
     })
     .then((response) => {
-      console.log(response);
-        if(response.data.access_token){
-            localStorage.setItem("user", JSON.stringify(response.data));
+        if(response.data.data.access_token){
+            localStorage.setItem("user", JSON.stringify(response.data.data));
         }
+
+        return response.data
     })
 }
 
@@ -24,6 +26,23 @@ const register = (first_name, email, password) => {
         role,
       }) 
       .then((response) => {
+        const usersReq = axios.get(API_URL + "users").then((responseGet) => {
+          let users = responseGet.data.data
+          let obj = JSON.parse(response.config.data)
+          users.forEach(user => {
+            if(user.first_name == obj.first_name){
+              let idUser = user.id;
+              let username = user.first_name;
+              let email = user.email
+              axios.post(API_URL + "items/user", {
+                idUser,
+                username,
+                email
+              })
+            }
+          });
+        });
+        
         if (response.data.access_token) {
           localStorage.setItem("user", JSON.stringify(response.data));
         }
