@@ -4,10 +4,11 @@ import {IoAddOutline} from "react-icons/io5";
 import { FiPlay } from "react-icons/fi";
 import {MdOutlinePlaylistAdd} from "react-icons/md";
 import { AiOutlineDelete } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { getPlaylists } from "../../../store/slices/playlist";
 
 
 export const HomeOrga = (props) => {
-
     return(
         <HomeListButton
         buttons={[
