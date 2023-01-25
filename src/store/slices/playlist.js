@@ -30,7 +30,7 @@ const playlistSlice = createSlice({
     reducers: {},   
     extraReducers: {
         [getPlaylists.fulfilled]: (state, action) => {
-            console.log(action.payload.data);
+            // console.log(action.payload.data);
             state.playlist = action.payload.data;
         },
         [getPlaylists.rejected]: (state, action) => {

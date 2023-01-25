@@ -15,10 +15,16 @@ import { ThemeAssociated } from "../../molecules/ThemeAssociated/ThemeAssociated
 
 export const AddMusicOrga = () => {
     const dispatch = useDispatch();
-    dispatch(getPlaylists())
-    const playlist = useSelector((state) => state)
-    console.log(playlist)
-    
+    useEffect(() => {
+        dispatch(getPlaylists());
+    }, [])
+    const playlist = useSelector((state) => state.playlist.playlist)
+    var musicList;
+    if(playlist) {
+        musicList = Object.assign({}, playlist);
+        console.log(musicList)
+    }
+
     const [isOpen, setIsOpen] = useState(false);
     return(
         <StyledAddMusicOrga>
@@ -26,7 +32,7 @@ export const AddMusicOrga = () => {
             <AddThemeButton icon={IoAddOutline} setIsOpen={setIsOpen}>Thèmes</AddThemeButton>
             <AddMusicButton>Ajouter la musique</AddMusicButton>
             
-            <AddThemeDialog isOpen={isOpen} setIsOpen={setIsOpen} playlists={playlist}></AddThemeDialog>
+            <AddThemeDialog isOpen={isOpen} setIsOpen={setIsOpen} playlists={musicList}></AddThemeDialog>
         </StyledAddMusicOrga>
     )
 }
