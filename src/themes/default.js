@@ -30,6 +30,17 @@ export const getTheme = (theme) => {
                 validate:"",
                 error:""
             }
+
+        case 'aled':
+            return {
+                background:"#62D9FF",
+                primary:"cyan",
+                label:"#00FFD1",
+                marginTop: '3rem',
+                secondary:"",
+                validate:"",
+                error:""
+            }
         }
         
 }

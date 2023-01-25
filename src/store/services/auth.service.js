@@ -2,6 +2,7 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8055/"
 
+
 const login = (email, password) =>{
     return axios.post(API_URL+"auth/login", {
         email,
@@ -64,7 +65,7 @@ const register = (first_name, email, password) => {
 
   const logout = () => {
     localStorage.removeItem("user");
-    localStorage.removeItem("userId")
+    localStorage.removeItem("userId");
   };
   
   const authService = {

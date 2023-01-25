@@ -8,6 +8,7 @@ import { HomePage } from '../pages/HomePage/HomePage.jsx';
 import { ProfilPage } from '../pages/ProfilPage/ProfilPage.jsx';
 import { Provider } from 'react-redux';
 import store from '../../store/store';
+import { GamePage } from '../pages/GamePage/GamePage.jsx';
 
 export const RouteHub = () => {
     return (
@@ -18,7 +19,8 @@ export const RouteHub = () => {
                 <Route index element={<ThemeProvider theme={getTheme('login')}><LoginPage/></ThemeProvider>} />
                 <Route path="sign-up"  element={<ThemeProvider theme={getTheme('signup')}><SignupPage/></ThemeProvider>} />
                 <Route path="home" element={<HomePage />} />
-                <Route path="profil" element={<ThemeProvider theme={getTheme('profil')}><ProfilPage idUser="2"/></ThemeProvider>} />
+                <Route path="profil" element={<ThemeProvider theme={getTheme('profil')}><ProfilPage/></ThemeProvider>} />
+                <Route path="partie" element={<ThemeProvider theme={getTheme('aled')}><GamePage/></ThemeProvider>} />
               </Route>
           </Routes>
         </BrowserRouter>

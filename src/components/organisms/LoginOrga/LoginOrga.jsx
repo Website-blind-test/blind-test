@@ -10,6 +10,7 @@ import { login } from "../../../store/slices/authentication"
 import { FormField } from "../../molecules/FormField/FormField";
 import { useRef } from "react";
 
+
 export const LoginOrga = () => {
 
     let navigate = useNavigate();
@@ -45,17 +46,14 @@ export const LoginOrga = () => {
     
         dispatch(login({ email, password }))
           .unwrap()
-          .then(() => {
-            navigate("/home");
-            window.location.reload();
-          })
           .catch(() => {
             setLoading(false);
           });
       };
 
+    
       if (isLoggedIn) {
-        return <Navigate to="/home" />;
+        navigate("/home");  
       }
     
     return (

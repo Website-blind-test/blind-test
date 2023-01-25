@@ -31,9 +31,11 @@ export const login = createAsyncThunk(
   async ({ email, password }, thunkAPI) => {
     try {
       const data = await AuthService.login(email, password);
+      const spotifyData = await AuthService.spotifyLogin();
       thunkAPI.dispatch(setMessage(data.data.message));
       return { user: data };
 } catch (error) {
+  console.log(error)
         const message =
         (error.response &&
             error.response.data &&
@@ -57,7 +59,7 @@ const initialState = user
 const authSlice = createSlice({
   name: "auth",
   initialState,
-  reducers: {
+  extraReducers: {
     [register.fulfilled]: (state, action) => {
       state.isLoggedIn = false;
     },
@@ -67,17 +69,21 @@ const authSlice = createSlice({
     [login.fulfilled]: (state, action) => {
       state.isLoggedIn = true;
       state.user = action.payload.user;
-      state.userInfo = action.payload.userInfo
+      state.userInfo = userInfo;
+      state.spotifyToken = localStorage.getItem("spotifyToken")
+      
     },
     [login.rejected]: (state, action) => {
       state.isLoggedIn = false;
       state.user = null;
       state.userInfo = null
+      state.spotifyToken = null
     },
     [logout.fulfilled]: (state, action) => {
       state.isLoggedIn = false;
       state.user = null;
       state.userInfo = null
+      localStorage.removeItem("token");
     },
   },
 });
