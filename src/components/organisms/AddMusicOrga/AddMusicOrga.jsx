@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPlaylists } from "../../../store/slices/playlist";
 
 import { ThemeAssociated } from "../../molecules/ThemeAssociated/ThemeAssociated";
+import { SelectTheme } from "../../atoms/SelectTheme/SelectTheme";
 
 export const AddMusicOrga = () => {
     const dispatch = useDispatch();
@@ -19,20 +20,16 @@ export const AddMusicOrga = () => {
         dispatch(getPlaylists());
     }, [])
     const playlist = useSelector((state) => state.playlist.playlist)
-    var musicList;
-    if(playlist) {
-        musicList = Object.assign({}, playlist);
-        console.log(musicList)
-    }
 
     const [isOpen, setIsOpen] = useState(false);
     return(
         <StyledAddMusicOrga>
             <LabeledField label={{children:"Ajouter une URL"}} id='addUrl' size="small" type="text" sx={{borderRadius: 2, bgcolor: 'white', position: 'relative', bottom: '0.5rem'}}/>
-            <AddThemeButton icon={IoAddOutline} setIsOpen={setIsOpen}>Thèmes</AddThemeButton>
+            {/* <AddThemeButton icon={IoAddOutline} setIsOpen={setIsOpen}>Thèmes</AddThemeButton> */}
+            <SelectTheme playlists={playlist}></SelectTheme>
             <AddMusicButton>Ajouter la musique</AddMusicButton>
             
-            <AddThemeDialog isOpen={isOpen} setIsOpen={setIsOpen} playlists={musicList}></AddThemeDialog>
+            {/* <AddThemeDialog isOpen={isOpen} setIsOpen={setIsOpen} playlists={musicList}></AddThemeDialog> */}
         </StyledAddMusicOrga>
     )
 }
