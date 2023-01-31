@@ -11,7 +11,7 @@ Cette application est encore en cours de développement
   - "npm start" dans le dossier du projet
   
 - Il est nécessaire d'importer le script de base de données disponible sur google drive et d'avoir un projet directus sur cette base de données.
-- Le nom de la base de données est "directusblindtest". Il sera probablement nécessaire de modifier la base de données dans les paramètres du projet directus
+- Le nom de la base de données est "directusblindtest".
   - Le compte admin est : 
     - Identifiant: "admin@example.com"
     - Mot de passe: "admin"
