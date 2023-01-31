@@ -14,7 +14,7 @@ export const StyledSelectTheme = styled.div`
         border: none;
         color: white;
     }
-    select * {
+    select option {
         color: white;
     }
 `;

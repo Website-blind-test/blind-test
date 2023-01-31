@@ -10,7 +10,9 @@ export const ThemeAssociated = (props) => {
     return(
         <StyledThemeAssociated>
             <p>{props.children}</p>
-            <Button onClick={() => {}}>{icon}</Button>
+            <Button onClick={() => {
+                props.remove(props.children)
+            }}>{icon}</Button>
         </StyledThemeAssociated>
     )
 }
