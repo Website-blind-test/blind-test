@@ -2,7 +2,7 @@
 Cette application est encore en cours de développement
 
 
-**Requirement :**
+**Pré-requis :**
 
 - Tout d'abord, il est nécessaire de lancer la commande "npm i"
 - Ensuite, il faut avoir 3 terminaux pour lancer les commandes : 
