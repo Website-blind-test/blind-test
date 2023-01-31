@@ -5,7 +5,7 @@ Cette application est encore en cours de développement
 **Requirement :**
 
 - Tout d'abord, il est nécessaire de lancer la commande "npm i"
-- Ensuite, il faut avoir 3 terminals pour lancer les commandes : 
+- Ensuite, il faut avoir 3 terminaux pour lancer les commandes : 
   - "npx directus start" dans le dossier du projet directus
   - "node ./server.js" dans le dossier du projet
   - "npm start" dans le dossier du projet
