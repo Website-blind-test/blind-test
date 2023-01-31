@@ -9,16 +9,44 @@ import { AiFillDelete } from "react-icons/ai";
 import { AddThemeDialog } from "../../molecules/AddThemeDialog/AddThemeDialog";
 import { useState } from "react";
 import { ThemeAssociated } from "../../molecules/ThemeAssociated/ThemeAssociated";
+import { UploadFiles } from "../../molecules/UploadFiles/UploadFiles";
+import { margin } from "@mui/system";
+import { FormField } from "../../molecules/FormField/FormField";
+import { useDispatch, useSelector } from "react-redux";
+import { useRef } from "react";
+import { addTrack, getTrack } from "../../../store/slices/track";
+import { checkToken } from "../../../store/slices/authentication";
+import { useNavigate } from "react-router";
 
 export const AddMusicOrga = () => {
+    let navigate = useNavigate();
     const [isOpen, setIsOpen] = useState(false);
+    const [file, setFile] = useState()
+
+    const ref = useRef('');
+
+    const dispatch = useDispatch();
+    dispatch(checkToken())
+
+    const handleSubmit = () => {
+
+        let data = {
+            title: ref.current.value,
+            url: file.name.replace(/ /g, "-")
+        }
+        dispatch(addTrack(data))
+        navigate("/home");  
+
+
+    }
+
     return(
         <StyledAddMusicOrga>
-            <LabeledField label={{children:"Ajouter une URL"}} id='addUrl' size="small" type="text" sx={{borderRadius: 2, bgcolor: 'white', position: 'relative', bottom: '0.5rem'}}/>
-            <AddThemeButton icon={IoAddOutline} setIsOpen={setIsOpen}>Thèmes</AddThemeButton>
-            <AddMusicButton>Ajouter la musique</AddMusicButton>
-            <ThemeAssociated icon={AiFillDelete}>Années 80</ThemeAssociated>
-            <AddThemeDialog isOpen={isOpen} setIsOpen={setIsOpen}></AddThemeDialog>
+            <UploadFiles file={file} setFile={setFile}/>
+            <form action="/home">
+                <LabeledField ref={ref} label={{children:"Titre :"}} size="small" name="title" type="text"></LabeledField>
+                <input id="submit" type="button" value="Valider" onClick={handleSubmit}/>
+            </form>
         </StyledAddMusicOrga>
     )
 }

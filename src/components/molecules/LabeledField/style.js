@@ -6,6 +6,5 @@ export const StyledLabeledField = styled.fieldset`
     flex-direction: column;
     width: fit-content;
     ${props => `margin-top: ${props.theme.marginTop};`}
-    border: unset
-
+    border: unset;
 `;

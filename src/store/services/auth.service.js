@@ -2,7 +2,6 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8055/"
 
-
 const login = (email, password) =>{
     return axios.post(API_URL+"auth/login", {
         email,
@@ -27,6 +26,20 @@ const login = (email, password) =>{
 
         return response.data
     })
+}
+
+
+const refreshToken = ({refresh_token}) =>{
+  return axios.post(API_URL+"auth/refresh", {
+      refresh_token,
+      mode: "json"
+  })
+  .then((response) => {
+    if(response.data.data.access_token){
+      localStorage.removeItem("user");
+      localStorage.setItem("user", JSON.stringify(response.data.data));
+    }
+  })
 }
 
 const register = (first_name, email, password) => {
@@ -63,15 +76,32 @@ const register = (first_name, email, password) => {
       });
   };
 
+  const checkToken = (user) => {
+    const token = JSON.parse(localStorage.getItem("user")).access_token;
+    return axios.get(API_URL+"items/track", {
+      headers : {
+          Authorization: "Bearer " + token
+      }
+  }).then((response) => {
+  })
+    .catch((err) => {
+      if(err.response.status === 401)
+        refreshToken(user)
+    })
+  }
+
   const logout = () => {
     localStorage.removeItem("user");
     localStorage.removeItem("userId");
+    localStorage.removeItem("token");
   };
   
   const authService = {
     register,
     login,
     logout,
+    refreshToken,
+    checkToken,
   };
   
   export default authService;

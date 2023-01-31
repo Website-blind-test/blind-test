@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
-import "./HomeListButton.css";
+import "./style.css";
 
 export const HomeListButton = ({buttons}) => {
     const generateListButton = () => {

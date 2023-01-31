@@ -4,15 +4,20 @@ import {IoAddOutline} from "react-icons/io5";
 import { FiPlay } from "react-icons/fi";
 import {MdOutlinePlaylistAdd} from "react-icons/md";
 import { AiOutlineDelete } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { checkToken } from "../../../store/slices/authentication";
 
 export const HomeOrga = (props) => {
+
+    const dispatch = useDispatch();
+
+    dispatch(checkToken())
 
     return(
         <HomeListButton
         buttons={[
-            {text: "Créer une partie", icon:(<IoAddOutline size='1.5em'/>), url:"/partie"},
-            {text: "Rejoindre une partie", icon :(<FiPlay size='1.5em'/>), url:'/partie'},
+            {text: "Créer une partie", icon:(<IoAddOutline size='1.5em'/>), url:"/create-game"},
+            {text: "Rejoindre une partie", icon :(<FiPlay size='1.5em'/>), url:'/game'},
             {text: "Ajouter une musique", icon :(<MdOutlinePlaylistAdd size='1.5em'/>), url:'/add-music'},
             {text: "Supprimer une musique", icon :(<AiOutlineDelete size='1.5em'/>)}
         ]}></HomeListButton>

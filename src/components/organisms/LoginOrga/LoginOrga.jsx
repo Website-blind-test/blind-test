@@ -37,6 +37,9 @@ export const LoginOrga = () => {
 
       useEffect(() => {
         dispatch(clearMessage());
+        if (isLoggedIn) {
+          navigate("/home");  
+        }
       }, [dispatch]);
 
       const handleLogin = (formValue) => {
@@ -51,10 +54,9 @@ export const LoginOrga = () => {
           });
       };
 
-    
-      if (isLoggedIn) {
-        navigate("/home");  
-      }
+    if (isLoggedIn) {
+      navigate("/home");  
+    }
     
     return (
         <>

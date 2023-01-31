@@ -28,12 +28,25 @@ export const register = createAsyncThunk(
   }
 );
 
+export const checkToken = createAsyncThunk(
+  "auth/refresh",
+  async (thunkAPI) => {
+    try {
+      const data = await AuthService.checkToken(user);
+      return { user: data };
+} catch (error) {
+  console.log(error)
+        return thunkAPI.rejectWithValue();
+    }
+  }
+);
+
+
 export const login = createAsyncThunk(
   "auth/login",
   async ({ email, password }, thunkAPI) => {
     try {
       const data = await AuthService.login(email, password);
-      const spotifyData = await AuthService.spotifyLogin();
       thunkAPI.dispatch(setMessage(data.data.message));
       return { user: data };
 } catch (error) {
@@ -72,20 +85,17 @@ const authSlice = createSlice({
       state.isLoggedIn = true;
       state.user = action.payload.user;
       state.userInfo = userInfo;
-      state.spotifyToken = localStorage.getItem("spotifyToken")
       
     },
     [login.rejected]: (state, action) => {
       state.isLoggedIn = false;
       state.user = null;
       state.userInfo = null
-      state.spotifyToken = null
     },
     [logout.fulfilled]: (state, action) => {
       state.isLoggedIn = false;
       state.user = null;
       state.userInfo = null
-      localStorage.removeItem("token");
     },
   },
 });

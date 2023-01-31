@@ -1,13 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { setMessage } from "./message";
 
 import TrackService from "../services/track.service";
 
 export const getTrack = createAsyncThunk(
   "track/getTrack",
-  async ({ idTrack }, thunkAPI) => {
+  async (thunkAPI) => {
     try {
-      const data = await TrackService.getTrack(idTrack);
+      const data = await TrackService.getTrack();
       return { track : data };
 } catch (error) {
         return thunkAPI.rejectWithValue();
@@ -15,18 +14,17 @@ export const getTrack = createAsyncThunk(
   }
 );
 
-export const playTrack = createAsyncThunk(
-  "track/playTrack",
-    async ({ uriTrack }, thunkAPI) => {
-    try {
-      const data = await TrackService.playTrack(uriTrack);
-      return false
-    }catch (error){
-      console.log(error)
+export const addTrack = createAsyncThunk(
+  "track/addTrack",
+  async({title, url}, thunkAPI) => {
+    try{
+      const data = await TrackService.addTrack(title, url)
+      return true
+    } catch(error) {
       return thunkAPI.rejectWithValue();
     }
   }
- )
+)
 
 const initialState = {}
 
@@ -35,13 +33,11 @@ const trackReducer = createSlice({
   initialState,
   extraReducers: {
     [getTrack.fulfilled]: (state, action) => {
-      state.currentTrack = {
-        currentTrackName:  localStorage.getItem("currentTrackName"),
-        currentTrackUri: localStorage.getItem("currentTrackUri")
-      } 
+      state.trackList = localStorage.getItem("trackList")
     },
     [getTrack.rejected]: (state, action) => {
-      state.currentTrack= false;
+      console.log(action)
+      state.trackList= false;
     },
   },
 });
