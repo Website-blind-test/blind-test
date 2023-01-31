@@ -1,17 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { setMessage } from "./message";
 import PlaylistService from "../services/playlist.service";
-import { create } from "yup/lib/Reference";
-import { action } from "@storybook/addon-actions";
-
-
 
 export const getPlaylists = createAsyncThunk(
     "playlist/getPlaylists",
     async (_, thunkAPI) => {
         try {
             const response = await PlaylistService.getPlaylists();
-            console.log(response)
             return response.data; 
         } catch (error) {
             const message =
@@ -32,11 +27,16 @@ const initialState = {};
 const playlistSlice = createSlice({
     name: "playlist",
     initialState,
-    reducers: {
+    reducers: {},   
+    extraReducers: {
         [getPlaylists.fulfilled]: (state, action) => {
-            state.playlists = action.payload.playlists;
+            // console.log(action.payload.data);
+            state.playlist = action.payload.data;
         },
-    },   
+        [getPlaylists.rejected]: (state, action) => {
+            console.log("allo");
+        },
+    },  
 });
 
 const {reducer} = playlistSlice
