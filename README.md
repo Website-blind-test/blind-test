@@ -15,5 +15,7 @@ Cette application est encore en cours de développement
   - Le compte admin est : 
     - Identifiant: "admin@example.com"
     - Mot de passe: "admin"
+
+Avant de lancer une partie, il est fortement conseillé d'ajouter une musique.
   
  Pour lancer l'application en PWA, il est nécessaire d'exécuter les commandes "npm run build" puis "serve -s build"
