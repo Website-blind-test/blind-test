@@ -12,7 +12,6 @@ const getTrack = () => {
         localStorage.setItem("trackList", JSON.stringify(response.data.data));
         return response.data
     }).catch((err) => {
-        console.log(err)
     })
 }
 
@@ -29,10 +28,8 @@ const addTrack = (title, path) => {
             Authorization: "Bearer " + token
         }
     }).then((response) => {
-        console.log(response)
     })
     .catch((err) => {
-        console.log(err)
     })
 }
 

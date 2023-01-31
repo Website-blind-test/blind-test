@@ -36,7 +36,6 @@ const trackReducer = createSlice({
       state.trackList = localStorage.getItem("trackList")
     },
     [getTrack.rejected]: (state, action) => {
-      console.log(action)
       state.trackList= false;
     },
   },

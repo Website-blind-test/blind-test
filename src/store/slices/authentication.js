@@ -14,7 +14,6 @@ export const register = createAsyncThunk(
       thunkAPI.dispatch(setMessage(response.data.message));
       return response.data;
     } catch (error) {
-      console.log(error)
       const message =
         (error.response &&
           error.response.data &&
@@ -35,7 +34,6 @@ export const checkToken = createAsyncThunk(
       const data = await AuthService.checkToken(user);
       return { user: data };
 } catch (error) {
-  console.log(error)
         return thunkAPI.rejectWithValue();
     }
   }
@@ -50,7 +48,6 @@ export const login = createAsyncThunk(
       thunkAPI.dispatch(setMessage(data.data.message));
       return { user: data };
 } catch (error) {
-  console.log(error)
         const message =
         (error.response &&
             error.response.data &&
