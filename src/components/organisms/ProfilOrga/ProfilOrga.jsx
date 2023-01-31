@@ -1,7 +1,5 @@
 import { Avatar } from "@mui/material"
-import axios, * as others from 'axios'
-import { useRef } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { LabeledField } from "../../molecules/LabeledField/LabeledField"
 import { StyledProfilOrga } from "./style"
 

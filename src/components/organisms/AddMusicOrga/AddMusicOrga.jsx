@@ -43,7 +43,7 @@ export const AddMusicOrga = () => {
             <UploadFiles file={file} setFile={setFile}/>
             <form action="/home">
                 <LabeledField ref={ref} label={{children:"Titre :"}} size="small" name="title" type="text"></LabeledField>
-                <SelectTheme playlists={playlist}></SelectTheme>
+                <SelectTheme id="selectTheme" playlists={playlist}></SelectTheme>
                 <input id="submit" type="button" value="Valider" onClick={handleSubmit}/>
             </form>
         </StyledAddMusicOrga>

@@ -14,18 +14,14 @@ export const SelectTheme = (props) => {
     }
 
     const selectTheme = (playlist) => {
-        console.log(playlist.target.value)
         if (themeAssociated.find(e => e === playlist.target.value) == null && playlist.target.value !== "default") {
             setThemeAssociated( [...themeAssociated, playlist.target.value]);
         }
        
-        console.log(themeAssociated);
     }
     const generateThemeAssociatedButtons = () => {
         if(themeAssociated.length !== 0) {
-            console.log(themeAssociated);
             return themeAssociated.map((theme, i) => {
-                console.log(theme)
                 return <ThemeAssociated icon={AiFillDelete} remove={removeThemeAssociated}>{theme}</ThemeAssociated>            
             })
         }
@@ -42,8 +38,8 @@ export const SelectTheme = (props) => {
         return options;
     }
 
-    return <>
-    <StyledSelectTheme>
+    return( <>
+    <StyledSelectTheme id={props.id}>
         <select onChange={playlist => selectTheme(playlist)} name="playlist" id="select_playlist">
             <option value="default">Choisissez un thème</option>
             {generatePlaylists()}
@@ -54,5 +50,5 @@ export const SelectTheme = (props) => {
         <StyledAssociatedTheme>
             {generateThemeAssociatedButtons()}
         </StyledAssociatedTheme>
-        </>
+        </>)
 }

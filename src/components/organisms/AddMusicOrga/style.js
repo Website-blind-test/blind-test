@@ -5,13 +5,13 @@ export const StyledAddMusicOrga = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 
     #submit {
         width: 7em;
         height: 3em;
         margin-top: 2em;
-        margin-left 3em;
+        margin-left 2.5em;
         font-size: 20px;
 
         background-color: #0000ff;
@@ -20,6 +20,10 @@ export const StyledAddMusicOrga = styled.div`
         color: #00FFD1;
         cursor: pointer;
         outline: none;
+    }
 
+    .selectTheme {
+        display: flex;
+        background-color: red;
     }
 `;

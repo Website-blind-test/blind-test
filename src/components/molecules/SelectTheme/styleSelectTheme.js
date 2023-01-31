@@ -9,6 +9,7 @@ export const StyledSelectTheme = styled.div`
     height: 30px;   
     display: flex;
     justify-content: center;
+    align-items: center;
     select {
         background-color: #22303C;
         border: none;
