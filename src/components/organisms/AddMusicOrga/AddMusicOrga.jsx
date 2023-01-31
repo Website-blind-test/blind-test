@@ -8,9 +8,7 @@ import { AiFillDelete } from "react-icons/ai";
 // import { RxCross1 } from "react-icons/rx";
 import { AddThemeDialog } from "../../molecules/AddThemeDialog/AddThemeDialog";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { getPlaylists } from "../../../store/slices/playlist";
-
 import { ThemeAssociated } from "../../molecules/ThemeAssociated/ThemeAssociated";
 import { UploadFiles } from "../../molecules/UploadFiles/UploadFiles";
 import { margin } from "@mui/system";
