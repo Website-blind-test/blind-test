@@ -16,4 +16,4 @@ Cette application est encore en cours de développement
     - Identifiant: "admin@example.com"
     - Mot de passe: "admin"
   
- Pour lancer l'application en PWA, il est nécessaire de lancer les commandes "npm run build" puis "serve -s build"
+ Pour lancer l'application en PWA, il est nécessaire d'exécuter les commandes "npm run build" puis "serve -s build"
